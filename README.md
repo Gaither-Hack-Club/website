@@ -1,2 +1,3 @@
-# ghs-hack-club
-Gaither High School Hack Club Website
+# Gaither Hack Club
+
+Gaither Hack Club Website
