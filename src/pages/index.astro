@@ -1,17 +1,51 @@
 ---
+import { getCollection } from "astro:content";
 
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const workshops = await getCollection("workshops");
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Gaither Hack Club</title>
-  </head>
-  <body>
-    <h1>Gaither Hack Club</h1>
-    <p>Gaither Hack Club is a student-led coding club at Gaither High School</p>
-  </body>
-</html>
+<BaseLayout>
+  <p class="pb-16 pt-10 text-center text-2xl font-medium">
+    Gaither Hack Club is a student-led coding club at Gaither High School.
+  </p>
+  <div class="flex items-start justify-evenly">
+    <div
+      class="flex w-1/3 flex-col items-start justify-start gap-2 rounded-md bg-red-700 p-4 drop-shadow-lg"
+    >
+      <h2 class="w-full text-center font-gothic text-3xl font-semibold">
+        Resources
+      </h2>
+      <p class="text-xl">
+        <a href="https://hackclub.com" target="_blank" class="underline"
+          >Hack Club</a
+        > - A nonprofit network of high school coding clubs and makers around
+        the world.
+      </p>
+      <p class="text-xl">
+        <a href="https://freecodecamp.org" target="_blank" class="underline"
+          >freeCodeCamp</a
+        > - Learn to code by building dozens of projects, step-by-step, right in
+        your browser, code editor, or mobile app.
+      </p>
+    </div>
+    <div
+      class="flex w-1/3 flex-col items-start justify-start gap-2 rounded-md bg-green-700 p-4 drop-shadow-lg"
+    >
+      <h2 class="w-full text-center font-gothic text-3xl font-semibold">
+        Workshops
+      </h2>
+      {
+        workshops.map((workshop) => (
+          <p class="text-xl">
+            <a href={`/workshops/${workshop.slug}`} class="underline">
+              {workshop.data.name}
+            </a>{" "}
+            - {workshop.data.description}
+          </p>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
