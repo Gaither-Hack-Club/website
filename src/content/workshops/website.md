@@ -4,7 +4,7 @@ description: Build your own personal website!
 ---
 
 Welcome to Hack Club! Today we\'ll start building our own personal
-website!
+website (with the help of Hack Club's mascot, Prophet Orpheus)!
 
 # Part I: Setup
 
@@ -424,3 +424,7 @@ Well, glad you asked, because guess what we\'ll be doing at the next
 club meeting\...
 
 See you there!
+
+---
+
+_This workshop was adapted from Hack Club's Personal Website workshop at https://workshops.hackclub.com/personal_website/_
