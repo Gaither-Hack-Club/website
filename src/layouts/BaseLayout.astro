@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 
 import poly from "../images/poly.svg";
+import instagram from "../images/instagram.svg";
+import github from "../images/github.svg";
 ---
 
 <html lang="en" class="m-0 p-0">
@@ -38,18 +40,40 @@ import poly from "../images/poly.svg";
     </style>
   </head>
   <body class="m-0 min-h-screen p-0 text-white">
-    <main
-      class="min-h-screen bg-gradient-to-t from-violet-950 via-slate-900 to-violet-950 shadow"
-    >
-      <a class="relative flex items-center justify-center p-2" href="/">
+    <main class="min-h-screen bg-blue-900">
+      <div
+        class="relative flex items-center justify-center px-2 py-10"
+        id="title"
+      >
         <Image src={poly} alt="Polygon" class="relative" />
-        <h1
-          class="absolute text-center font-gothic text-2xl font-bold text-white lg:text-4xl"
+        <div
+          class="absolute flex items-center justify-center gap-2 text-center font-gothic text-2xl font-bold text-white lg:text-4xl"
         >
-          Gaither Hack Club
-        </h1>
-      </a>
+          <a href="/">Gaither Hack Club</a>
+          <a href="https://www.instagram.com/gaitherhackclub/">
+            <Image src={instagram} alt="Instagram" class="h-10 w-10" />
+          </a>
+          <a href="https://github.com/Gaither-Hack-Club">
+            <Image src={github} alt="GitHub" class="h-10 w-10" />
+          </a>
+        </div>
+      </div>
       <slot />
     </main>
+    <script>
+      const title = document.getElementById("title");
+      document.addEventListener("mousemove", (e) => {
+        const x = e.clientX;
+        const screenW = window.innerWidth;
+        const abs = Math.abs(x - screenW / 2);
+        const constant = 100;
+        if (x > screenW / 2) {
+          // rotate title
+          title.style.transform = `rotate(${abs / constant}deg)`;
+        } else {
+          title.style.transform = `rotate(-${abs / constant}deg)`;
+        }
+      });
+    </script>
   </body>
 </html>

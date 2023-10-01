@@ -7,8 +7,15 @@ const workshops = await getCollection("workshops");
 ---
 
 <BaseLayout>
-  <p class="pb-16 pt-10 text-center text-lg font-medium lg:text-2xl">
-    Gaither Hack Club is a student-led coding club at Gaither High School.
+  <p class="text-center text-lg font-medium lg:text-2xl">
+    Gaither Hack Club is a <strong>student-led</strong> coding club at Gaither
+    High School.
+  </p>
+  <p class="pb-16 text-center text-lg font-medium lg:text-2xl">
+    Interested? Sign up on <a
+      href="https://forms.office.com/r/FBtKsJAb0S"
+      class="text-blue-400 underline">this form</a
+    >!
   </p>
   <div
     class="flex flex-col items-center justify-evenly gap-10 lg:flex-row lg:items-start lg:gap-0"
@@ -25,7 +32,8 @@ const workshops = await getCollection("workshops");
         <a href="https://hackclub.com" target="_blank" class="underline"
           >Hack Club</a
         > - A nonprofit network of high school coding clubs and makers around
-        the world.
+        the world. Grants and cool projects included! Join the amazing Slack
+        community to chat with fellow makers!
       </p>
       <p class="text-md lg:text-xl">
         <a href="https://freecodecamp.org" target="_blank" class="underline"
