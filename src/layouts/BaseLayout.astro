@@ -39,12 +39,13 @@ import github from "../images/github.svg";
       }
     </style>
   </head>
-  <body class="m-0 min-h-screen p-0 text-white">
-    <main class="flex min-h-screen flex-col items-center bg-blue-900">
+  <body class="m-0 min-h-screen overflow-x-hidden p-0 text-white">
+    <main class="bg-bg-blue flex min-h-screen flex-col items-center">
       <div
         class="relative flex max-w-fit items-center justify-center px-2 py-10"
         id="title"
       >
+        <div class="bg-ghs-dark-blue absolute h-full w-[110%] blur-2xl"></div>
         <Image src={poly} alt="Polygon" class="relative" />
         <div
           class="absolute flex items-center justify-center gap-2 text-center font-gothic text-xl font-bold text-white md:text-2xl lg:text-4xl"
@@ -54,7 +55,7 @@ import github from "../images/github.svg";
             <Image
               src={instagram}
               alt="Instagram"
-              class="h-7 w-7 md:h-10 md:w-10"
+              class="h-7 w-7 shadow-lg md:h-10 md:w-10"
             />
           </a>
           <a href="https://github.com/Gaither-Hack-Club">
@@ -62,7 +63,9 @@ import github from "../images/github.svg";
           </a>
         </div>
       </div>
-      <slot />
+      <div class="z-10">
+        <slot />
+      </div>
     </main>
     <script>
       const title = document.getElementById("title");
