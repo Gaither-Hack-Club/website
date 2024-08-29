@@ -10,4 +10,7 @@ export default defineConfig({
       devSourcemap: true,
     },
   },
+  redirects: {
+    "/adventure": "https://adventure.samuel.hackclub.app",
+  },
 });
